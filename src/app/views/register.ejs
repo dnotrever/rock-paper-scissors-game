@@ -1,40 +1,56 @@
 <%- include('./main') -%>
 
-<div class="container">
+<link href="css/main.css" rel="stylesheet">
+<link href="css/register.css" rel="stylesheet">
 
-  <h2>Sign Up!</h2>
+<div class="container d-flex flex-column">
 
-  <form action="/register" method="POST">
+      <div class="register-title">
+        <h2>Sign Up!</h2>
+      </div>
 
-    <div class="form-group">
-      <label for="username">Username</label>
-      <input type="text" class="form-control" name="username">
-    </div>
+      <form class="register-form" action="/register" method="POST">
+    
+        <div class="form-group register-username">
+          <label for="username"></label>
+          <input type="text" class="form-control" name="username" placeholder="Username">
+        </div>
+    
+        <div class="form-group register-email">
+          <label for="email"></label>
+          <input type="email" class="form-control" name="email" placeholder="Email">
+          <small class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+    
+        <div class="form-group register-password">
+          <label for="password"></label>
+          <input type="password" class="form-control" name="password" placeholder="Password"> 
+          <small class="form-text text-muted">Password must contain a least 5 characteres</small>
+        </div>
+    
+        <div class="register-button">
+          <button type="submit" class="btn btn-primary">Register</button>
+        </div>
+        
+      </form>
+    
+      <div class="register-warnings">
 
-    <br>
+        <% if (locals.dataErrors) { %>
+          <ul class="register-warnings-title">The following errors have occurred:</ul>
+          <% for (let i=0; i<dataErrors.length; i++) { %>
+            <li class="register-warnings-line"> <%-dataErrors[i]-%> </li>
+          <% } %> 
+        <% } %> 
+        
+      </div>
 
-    <div class="form-group">
-      <label for="email">Email</label>
-      <input type="email" class="form-control" name="email">
-      <small id="register-email-help" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    <div class="register-submenu">
+      <p><a href="/">Come Back to the Home</a></p>
+      <p>
+        Already a player?
+        <a href="/login">Sign In!</a>
+      </p>  
     </div>
       
-    <br>
-
-    <div class="form-group">
-      <label for="password">Password</label>
-      <input type="password" class="form-control" name="password">
-      <small id="register-email-help" class="form-text text-muted">Password must contain at least 8 characters.</small>
-    </div>
-
-    <br>
-
-    <button type="submit" class="btn btn-primary">Submit</button>
-
-  </form>
-
-  <br><br>
-
-  <p><a href="/">Come Back</a></p>
-    
 </div>
