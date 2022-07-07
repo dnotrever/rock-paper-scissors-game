@@ -1,12 +1,16 @@
+const bcrypt = require('bcrypt')
 const usersModel = require('../models/Users')
 
 class UserController {
 
-    async registerNewUser(req, res) {
+    async userRegister(req, res) {
 
         const {username, email, password} = req.body
 
-        const data = {username, email, password}
+        const salt = await bcrypt.genSalt(4)
+        const passwordHash = await bcrypt.hash(password, salt)
+
+        const data = {username, email, password: passwordHash}
 
         const dataErrors = []
 
@@ -35,24 +39,70 @@ class UserController {
                 }
 
             } else {
-
                 if (password.length < 5) {
-                    dataErrors.push('The password must have at least 5 characteres.')
+                    const msg = 'The password must have at least 5 characteres.'
+                    dataErrors.push(msg)
                 } 
-
             }
 
         }
 
         if (dataErrors.length !== 0) {
-            return res.render('register',
-                {dataErrors: dataErrors,
-                tabName: 'Sign Up'})
+            const tabNameMsg = 'Sign Up'
+            return res.render('register', {dataErrors: dataErrors, tabName: tabNameMsg})
         }
 
         await usersModel.create(data)
-        return res.redirect('/customize')
+        return res.redirect('/login')
         
+    }
+
+    async playerLogin(req, res) {
+
+        const {username, password} = req.body
+
+        const dataNotInserted = {}
+
+        if (!username) {
+            const msg = 'Username not inserted.'
+            dataNotInserted['userNotInserted'] = msg
+        }
+
+        if (!password) {
+            const msg = 'Password not inserted.'
+            dataNotInserted['passNotInserted'] = msg
+        }
+
+        const verifyNotInserted = obj => {
+            return Object.keys(obj).length === 0
+        }
+
+        if (!verifyNotInserted(dataNotInserted)) {
+            return res.render('login',
+                {usernameError: dataNotInserted.userNotInserted,
+                passwordError: dataNotInserted.passNotInserted,
+                tabName: 'Login'})
+        }
+
+        const playerExists = await usersModel
+            .findOne({ where: {username: username} })
+
+        if (playerExists) {
+
+            const checkPassword = await bcrypt.compare(password, playerExists.password)
+
+            if (!checkPassword) {
+                const msg = 'The password is incorrect!'
+                return res.render('login', {passwordNotMatch: msg})
+            } else {
+                return res.redirect('/profile')
+            }
+
+        } else {
+            const msg = 'Player not registered!'
+            return res.render('login', {playerNotFound: msg})
+        }
+
     }
 
 }

@@ -1,1 +1,66 @@
-<h2>Login Page!</h2>
+<%- include('./main') -%>
+
+<link href="css/main.css" rel="stylesheet">
+<link href="css/login.css" rel="stylesheet">
+
+<div class="container d-flex flex-column">
+
+    <div class="login-title">
+        <h2>Sign In!</h2>
+    </div>
+
+    <form class="login-form" action="/login" method="POST">
+
+        <div class="form-group login-username">
+
+            <div class="login-warnings">
+                <% if (locals.usernameError) { %>
+                    <small><%-usernameError-%></small>
+                <% } %>
+    
+                <% if (locals.playerNotFound) { %>
+                    <small><%-playerNotFound-%></small>
+                <% } %>
+            </div>
+
+            <input type="text" class="form-control" name="username" placeholder="Username">
+            <small>
+                Forgot your username?
+                <a href="#">Click here!</a>
+            </small>
+        </div>
+
+        <div class="form-group login-password">
+
+            <div class="login-warnings">
+                <% if (locals.passwordError) { %>
+                    <small><%-passwordError-%></small>
+                <% } %>
+
+                <% if (locals.passwordNotMatch) { %>
+                    <small><%-passwordNotMatch-%></small>
+                <% } %>
+            </div>
+            
+            <input type="password" class="form-control" name="password" placeholder="Password"> 
+            <small>
+                Forgot your password?
+                <a href="#">Click here!</a>
+            </small>
+        </div>
+
+    <div class="login-button">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+    
+    </form>
+
+    <div class="login-submenu">
+      <p><a href="/">Come Back to the Home</a></p>
+      <p>
+        Not a player yet?
+        <a href="/register">Sign Up!</a>
+      </p>  
+    </div>
+      
+</div>

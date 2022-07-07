@@ -6,7 +6,7 @@ $bgc-orange: transparent
 $width-main-divs: 30rem
 $margin-top-main-divs: .5rem
 
-.register-title
+.login-title
     background-color: $bgc-silver
 
     height: 3rem
@@ -25,7 +25,7 @@ $margin-top-main-divs: .5rem
         align-items: center
         font-size: 2rem
 
-.register-form
+.login-form
     background-color: $bgc-gray
 
     height: 22rem
@@ -35,15 +35,25 @@ $margin-top-main-divs: .5rem
     display: flex
     flex-direction: column
     justify-content: space-around
-    
-    .form-control
-        background-color: #FFF
-        
-        padding: .5rem
-        margin-bottom: .3rem
-        color: #444
 
-    .register-button
+    .form-group
+        height: 6rem
+    
+        .login-warnings
+            background-color: $bgc-silver
+
+            color: red
+            height: 1.4rem
+        
+        .form-control
+            background-color: #EEE
+            
+            padding: .5rem
+            margin-bottom: .3rem
+            left: 2rem
+            color: #444
+
+    .login-button
         background-color: $bgc-orange
 
         width: 100%
@@ -57,27 +67,7 @@ $margin-top-main-divs: .5rem
             font-size: 1.2rem
             letter-spacing: 2px
 
-.register-warnings
-    background-color: $bgc-silver
-
-    height: 9rem
-    width: $width-main-divs
-    margin-top: $margin-top-main-divs
-    color: red
-    font-size: .9rem
-    text-align: center
-
-    .register-warnings-title
-        background-color: $bgc-orange
-
-        font-weight: bold
-
-    .register-warnings-line
-        background-color: $bgc-orange
-        
-        list-style: none
-
-.register-submenu
+.login-submenu
     background-color: $bgc-gray
 
     height: 6rem

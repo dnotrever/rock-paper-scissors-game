@@ -9,14 +9,12 @@ routes.get('/register', (_, res) => {
     res.render('register', {tabName: 'Sign Up'})
 })
 
-routes.get('/customize', (_, res) => {
-    res.render('customize', {tabName: 'Customize'})
-})
-
 routes.get('/login', (_, res) => {
     res.render('login', {tabName: 'Login'})
 })
 
-routes.post('/register', usersController.registerNewUser)
+routes.post('/register', usersController.userRegister)
+
+routes.post('/login', usersController.playerLogin)
 
 module.exports = routes

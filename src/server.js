@@ -12,6 +12,6 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, './app/views'))
 
 app.listen(PORT, async () => {
-    await database.sync()
+    await database.sync({force: true})
     console.log(`\nServer running on http://localhost:${PORT}/\n`)
 })
