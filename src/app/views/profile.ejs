@@ -1,0 +1,36 @@
+<%- include('./main') -%>
+
+<link href="css/main.css" rel="stylesheet">
+<link href="css/profile.css" rel="stylesheet">
+
+<div class="container d-flex">
+
+    <div class="profile-main">
+
+        <h3 class="profile-title"></h3>
+
+        <small class="profile-date">Member since </small>
+
+        <div class="profile-stats">
+            <p>Plays:  0</p>
+            <p>Wins:  0</p>
+            <p>Draws:  0</p>
+            <p>Losses:  0</p>
+        </div>
+
+        <div class="play-game">
+            <button type="button" class="btn btn-primary">Play Now</button>
+        </div>
+
+    </div>
+
+    <div class="profile-aside">
+            <img class="profile-avatar" src="#" alt="player avatar">
+            <small><a href="#">Change Avatar</a></small>
+            <p><a href="#">Change Account Infos</a></p>
+            <p><a href="/logout">Log Out</a></p>
+    </div>
+    
+</div>
+
+<script src="js/profile.js"></script>

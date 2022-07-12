@@ -1,25 +1,24 @@
 require('dotenv').config()
-const Sequelize = require('sequelize')
+const mongoose = require('mongoose')
 
 class Connection {
 
     constructor() {
-        this.connectMySQL()
+        this.connectMongoDB()
     }
 
-    connectMySQL() {
-        this.mysqlConnection = new Sequelize(
-            process.env.DB_NAME,
-            process.env.DB_ROOT,
-            process.env.DB_PASS,
-            {
-                dialect: 'mysql',
-                host: process.env.DB_HOST,
-                port: process.env.DB_PORT
-            }
-        )
+    connectMongoDB() {
+
+        const dbPass = process.env.DB_PASS
+        const dbName = process.env.DB_NAME
+        const dbCluester = process.env.DB_CLUSTER
+
+        const dbURI = `mongodb+srv://${dbName}:${dbPass}@${dbCluester}.9lmpx.mongodb.net/?retryWrites=true&w=majority`
+
+        this.mongodbConnection = mongoose.connect(dbURI, {useNewUrlParser: true, useUnifiedTopology: true})
+
     }
 
 }
 
-module.exports = new Connection().mysqlConnection
+module.exports = new Connection().mongodbConnection

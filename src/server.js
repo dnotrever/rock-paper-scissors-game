@@ -11,7 +11,15 @@ app.disable('x-powered-by')
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, './app/views'))
 
-app.listen(PORT, async () => {
-    await database.sync({force: true})
-    console.log(`\nServer running on http://localhost:${PORT}/\n`)
+app.listen(PORT, () => {
+
+    database
+        .then( _ => {
+            console.log('\nMongoDB Connected!')
+            console.log(`\nServer running on http://localhost:${PORT}/\n`)
+        })
+        .catch(err => {
+            console.log(`\n${err}\n`)
+        })
+        
 })

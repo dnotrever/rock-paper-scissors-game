@@ -1,20 +1,31 @@
 const routes = require('express').Router()
-const usersController = require('./app/controllers/usersController')
+const playerController = require('./app/controllers/playerController')
+const { requireAuth } = require('./middleware/middleware')
+
+// GET
 
 routes.get('/', (_, res) => {
-    res.render('home', {tabName: 'Home'})
+    res.render('home', {tabName: 'Welcome!'})
 })
 
-routes.get('/register', (_, res) => {
-    res.render('register', {tabName: 'Sign Up'})
+routes.get('/signup', (_, res) => {
+    res.render('signup', {tabName: 'Sign Up'})
 })
 
 routes.get('/login', (_, res) => {
     res.render('login', {tabName: 'Login'})
 })
 
-routes.post('/register', usersController.userRegister)
+routes.get('/profile', requireAuth, (_, res) => {
+    res.render('profile', {tabName: 'profile'})
+})
 
-routes.post('/login', usersController.playerLogin)
+routes.get('/logout', playerController.playerLogout)
+
+// POST
+
+routes.post('/signup', playerController.playerSignup)
+
+routes.post('/login', playerController.playerLogin)
 
 module.exports = routes

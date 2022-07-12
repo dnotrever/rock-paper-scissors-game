@@ -1,4 +1,4 @@
-.register-title {
+.signup-title {
   background-color: transparent;
   height: 3rem;
   width: 30rem;
@@ -6,7 +6,7 @@
   display: flex;
   justify-content: center;
 }
-.register-title h2 {
+.signup-title h2 {
   background-color: transparent;
   height: 100%;
   width: 60%;
@@ -16,7 +16,7 @@
   font-size: 2rem;
 }
 
-.register-form {
+.signup-form {
   background-color: transparent;
   height: 22rem;
   width: 30rem;
@@ -26,13 +26,13 @@
   flex-direction: column;
   justify-content: space-around;
 }
-.register-form .form-control {
+.signup-form .form-control {
   background-color: #FFF;
   padding: 0.5rem;
   margin-bottom: 0.3rem;
   color: #444;
 }
-.register-form .register-button {
+.signup-form .signup-button {
   background-color: transparent;
   width: 100%;
   display: flex;
@@ -40,13 +40,13 @@
   justify-content: space-around;
   align-items: center;
 }
-.register-form .register-button button {
+.signup-form .signup-button button {
   width: 8rem;
   font-size: 1.2rem;
   letter-spacing: 2px;
 }
 
-.register-warnings {
+.signup-warnings {
   background-color: transparent;
   height: 9rem;
   width: 30rem;
@@ -55,16 +55,8 @@
   font-size: 0.9rem;
   text-align: center;
 }
-.register-warnings .register-warnings-title {
-  background-color: transparent;
-  font-weight: bold;
-}
-.register-warnings .register-warnings-line {
-  background-color: transparent;
-  list-style: none;
-}
 
-.register-submenu {
+.signup-submenu {
   background-color: transparent;
   height: 6rem;
   width: 30rem;
@@ -75,8 +67,8 @@
   align-items: center;
   font-size: 1.2rem;
 }
-.register-submenu p {
+.signup-submenu p {
   background-color: transparent;
 }
 
-/*# sourceMappingURL=register.css.map */
+/*# sourceMappingURL=signup.css.map */

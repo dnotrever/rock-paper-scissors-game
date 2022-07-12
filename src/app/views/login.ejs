@@ -12,17 +12,7 @@
     <form class="login-form" action="/login" method="POST">
 
         <div class="form-group login-username">
-
-            <div class="login-warnings">
-                <% if (locals.usernameError) { %>
-                    <small><%-usernameError-%></small>
-                <% } %>
-    
-                <% if (locals.playerNotFound) { %>
-                    <small><%-playerNotFound-%></small>
-                <% } %>
-            </div>
-
+            <small class="username-error login-warnings"></small>
             <input type="text" class="form-control" name="username" placeholder="Username">
             <small>
                 Forgot your username?
@@ -31,17 +21,7 @@
         </div>
 
         <div class="form-group login-password">
-
-            <div class="login-warnings">
-                <% if (locals.passwordError) { %>
-                    <small><%-passwordError-%></small>
-                <% } %>
-
-                <% if (locals.passwordNotMatch) { %>
-                    <small><%-passwordNotMatch-%></small>
-                <% } %>
-            </div>
-            
+            <small class="password-error login-warnings"></small>
             <input type="password" class="form-control" name="password" placeholder="Password"> 
             <small>
                 Forgot your password?
@@ -59,8 +39,10 @@
       <p><a href="/">Come Back to the Home</a></p>
       <p>
         Not a player yet?
-        <a href="/register">Sign Up!</a>
+        <a href="/signup">Sign Up!</a>
       </p>  
     </div>
       
 </div>
+
+<script src="js/login.js"></script>

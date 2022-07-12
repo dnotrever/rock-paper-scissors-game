@@ -1,7 +1,6 @@
+const cookieParser = require('cookie-parser')
 const express = require('express')
 const routes = require('./routes')
-
-// require('./config/dbConnection')
 
 class App {
 
@@ -15,6 +14,7 @@ class App {
         this.app.use(express.json())
         this.app.use(express.urlencoded({extended: true}))
         this.app.use(express.static(__dirname + '/public'))
+        this.app.use(cookieParser())
     }
 
     routes() {
