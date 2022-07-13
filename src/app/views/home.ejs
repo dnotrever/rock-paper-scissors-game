@@ -11,14 +11,12 @@
 
     <h4>Welcome and Have Fun!</h4>
 
-    <p>
-        Not registered yet?
-        <a href="/signup">Sign Up!</a>
-    </p>
-
-    <p>
-        Already a player?
-        <a href="/login">Sign In!</a>
-    </p>
+    <% if (player) { %>
+        <p><a href="/profile"><%- player.username -%></a></p>
+        <p><a href="/logout">Logout</a></p>
+    <% } else { %>
+        <p>Already a player? <a href="/login">Sign In!</a> </p>
+        <p>Not registered yet? <a href="/signup">Sign Up!</a> </p>
+    <% } %>
 
 </div>

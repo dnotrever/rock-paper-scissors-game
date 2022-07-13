@@ -1,23 +1,26 @@
 const routes = require('express').Router()
 const playerController = require('./app/controllers/playerController')
-const { requireAuth } = require('./middleware/middleware')
+const { requireAuth, checkPlayer } = require('./middleware/middleware')
+
 
 // GET
 
-routes.get('/', (_, res) => {
-    res.render('home', {tabName: 'Welcome!'})
+routes.get('*', checkPlayer)
+
+routes.get('/', (req, res) => {
+    res.render('home')
 })
 
-routes.get('/signup', (_, res) => {
-    res.render('signup', {tabName: 'Sign Up'})
+routes.get('/signup', (req, res) => {
+    res.render('signup')
 })
 
-routes.get('/login', (_, res) => {
-    res.render('login', {tabName: 'Login'})
+routes.get('/login', (req, res) => {
+    res.render('login')
 })
 
-routes.get('/profile', requireAuth, (_, res) => {
-    res.render('profile', {tabName: 'profile'})
+routes.get('/profile', requireAuth, (req, res) => {
+    res.render('profile')
 })
 
 routes.get('/logout', playerController.playerLogout)

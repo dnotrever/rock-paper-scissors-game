@@ -3,19 +3,25 @@
 <link href="css/main.css" rel="stylesheet">
 <link href="css/profile.css" rel="stylesheet">
 
+
+
 <div class="container d-flex">
 
     <div class="profile-main">
 
-        <h3 class="profile-title"></h3>
+        <h3 class="profile-title">
+            <%- player.username -%>
+        </h3>
 
         <small class="profile-date">Member since </small>
 
         <div class="profile-stats">
-            <p>Plays:  0</p>
-            <p>Wins:  0</p>
-            <p>Draws:  0</p>
-            <p>Losses:  0</p>
+            <ul>
+                <li>Plays:  0</li>
+                <li>Wins:  0</li>
+                <li>Draws:  0</li>
+                <li>Losses:  0</li>
+            </ul>
         </div>
 
         <div class="play-game">

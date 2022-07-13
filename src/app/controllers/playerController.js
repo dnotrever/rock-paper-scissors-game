@@ -100,7 +100,7 @@ class PlayerController {
 
         res.cookie('jwt', '', { maxAge: 1 })
 
-        res.redirect('/login')
+        res.redirect('/')
 
     }
 
