@@ -1,5 +1,4 @@
 require('dotenv').config()
-
 const jwt = require('jsonwebtoken')
 const playerModel = require('../app/models/Player')
 

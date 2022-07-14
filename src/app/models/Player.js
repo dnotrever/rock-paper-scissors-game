@@ -24,15 +24,17 @@ const playerSchema = new mongoose.Schema({
         minlength: [5, 'The password must have at least 5 characteres.']
     },
 
-    plays: { type: Number },
+    plays: { type: Number, default: 0 },
 
-    wins: { type: Number },
+    wins: { type: Number, default: 0 },
 
-    draws: { type: Number },
+    draws: { type: Number, default: 0 },
 
-    losses: { type: Number },
+    losses: { type: Number, default: 0 },
 
-    avatar: { data: Buffer, contentType: String }
+    avatar: { data: String },
+
+    createdAt: { type: Date, default: Date.now }
 
 })
 

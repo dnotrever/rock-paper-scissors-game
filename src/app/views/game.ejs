@@ -1,0 +1,39 @@
+<%- include('./main') -%>
+
+<link href="css/main.css" rel="stylesheet">
+<link href="css/game.css" rel="stylesheet">
+
+<div class="container d-flex">
+
+    <div class="game-stats">
+        <small><a href="/profile">Profile</a></small>
+    </div>
+    
+    <small class="player-id"><%- player._id -%></small>
+
+    <div class="game-hands">
+
+        <div class="hand">
+            <i class="far fa-hand-rock" onclick="play('rock')"></i>
+        </div>
+
+        <div class="hand">
+            <i class="far fa-hand-paper" onclick="play('paper')"></i>
+        </div>
+
+        <div class="hand">
+            <i class="far fa-hand-scissors" onclick="play('scissors')"></i>
+        </div>
+        
+    </div>
+
+    <div class="game-table">
+        <div class="selected"></div>
+        <div class="opponent"></div>
+    </div>
+
+    <div class="game-result"></div>
+
+</div>
+
+<script src="js/game.js"></script>

@@ -4,9 +4,9 @@ const usernameError = document.querySelector('.username-error')
 const emailError = document.querySelector('.email-error')
 const passwordError = document.querySelector('.password-error')
 
-form.addEventListener('submit', async e => {
+form.addEventListener('submit', async event => {
 
-    e.preventDefault()
+    event.preventDefault()
 
     usernameError.textContent = ''
     emailError.textContent = ''

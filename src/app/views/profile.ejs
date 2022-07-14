@@ -3,8 +3,6 @@
 <link href="css/main.css" rel="stylesheet">
 <link href="css/profile.css" rel="stylesheet">
 
-
-
 <div class="container d-flex">
 
     <div class="profile-main">
@@ -13,27 +11,30 @@
             <%- player.username -%>
         </h3>
 
-        <small class="profile-date">Member since </small>
-
+        <small>ID: <%- player._id -%></small>
+        
         <div class="profile-stats">
             <ul>
-                <li>Plays:  0</li>
-                <li>Wins:  0</li>
-                <li>Draws:  0</li>
-                <li>Losses:  0</li>
+                <li>Plays: <%- player.plays -%></li>
+                <li>Wins: <%- player.wins -%></li>
+                <li>Draws: <%- player.draws -%></li>
+                <li>Losses: <%- player.losses -%></li>
             </ul>
         </div>
 
         <div class="play-game">
-            <button type="button" class="btn btn-primary">Play Now</button>
+            <a href="/game">Play Now!</a>
         </div>
+
+        <a href="/">Go Home!</a>
 
     </div>
 
     <div class="profile-aside">
-            <img class="profile-avatar" src="#" alt="player avatar">
-            <small><a href="#">Change Avatar</a></small>
-            <p><a href="#">Change Account Infos</a></p>
+            <div class="profile-avatar">
+                <img src="images/avatar.png" alt="player avatar">
+            </div>
+            <p><a href="#">Account Settings</a></p>
             <p><a href="/logout">Log Out</a></p>
     </div>
     

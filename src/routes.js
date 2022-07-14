@@ -2,7 +2,6 @@ const routes = require('express').Router()
 const playerController = require('./app/controllers/playerController')
 const { requireAuth, checkPlayer } = require('./middleware/middleware')
 
-
 // GET
 
 routes.get('*', checkPlayer)
@@ -23,9 +22,15 @@ routes.get('/profile', requireAuth, (req, res) => {
     res.render('profile')
 })
 
+routes.get('/game', requireAuth, (req, res) => {
+    res.render('game')
+})
+
 routes.get('/logout', playerController.playerLogout)
 
 // POST
+
+routes.post('/game', playerController.playerPlays)
 
 routes.post('/signup', playerController.playerSignup)
 

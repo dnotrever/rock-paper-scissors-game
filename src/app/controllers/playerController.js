@@ -1,6 +1,6 @@
 require('dotenv').config()
-const playerModel = require('../models/Player')
 const jwt = require('jsonwebtoken')
+const playerModel = require('../models/Player')
 
 class PlayerController {
 
@@ -39,7 +39,7 @@ class PlayerController {
     createToken = id => {
         return jwt.sign({ id },
             process.env.SECRET,
-            { expiresIn: 60000 })
+            { expiresIn: 3600000 })
     }
 
     async playerSignup(req, res) {
@@ -54,7 +54,7 @@ class PlayerController {
 
             const token = new PlayerController().createToken(player._id)
 
-            res.cookie('jwt', token, { httpOnly: true, maxAge: 60000 })
+            res.cookie('jwt', token, { httpOnly: true, maxAge: 3600000 })
 
             res.status(201).json({ player: player._id })
 
@@ -80,7 +80,7 @@ class PlayerController {
 
             const token = new PlayerController().createToken(player._id)
 
-            res.cookie('jwt', token, { httpOnly: true, maxAge: 60000 })
+            res.cookie('jwt', token, { httpOnly: true, maxAge: 3600000 })
 
             res.status(201).json({ player: player._id })
 
@@ -104,6 +104,25 @@ class PlayerController {
 
     }
 
+    async playerPlays(req, res) {
+
+        const playerId = req.body.id
+
+        const { plays, wins, draws, losses } = req.body
+    
+        const player = await playerModel.findOne({ _id:playerId })
+
+        const newStatPlay = player.plays + plays
+        const newStatWin = player.wins + wins
+        const newStatDraws = player.draws + draws
+        const newStatLosses = player.losses + losses
+
+        await playerModel.updateOne({_id:playerId}, {
+            plays:newStatPlay, wins:newStatWin, draws:newStatDraws, losses:newStatLosses
+        })
+
+    }
+    
 }
 
 module.exports = new PlayerController()
