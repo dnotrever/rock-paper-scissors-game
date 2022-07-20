@@ -28,6 +28,10 @@ routes.get('/game', requireAuth, (req, res) => {
     res.render('game')
 })
 
+routes.get('/ranking', requireAuth, (req, res) => {
+    res.render('ranking')
+})
+
 routes.get('/edit-account', requireAuth, (req, res) => {
     res.render('edit-account')
 })
