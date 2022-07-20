@@ -1,0 +1,25 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.settings-warnings {
+  background-color: transparent;
+  height: 9rem;
+  width: 30rem;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.msg-error {
+  color: red;
+}
+
+.msg-success {
+  color: green;
+}
+
+/*# sourceMappingURL=edit-account.css.map */

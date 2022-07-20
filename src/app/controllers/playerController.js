@@ -9,7 +9,7 @@ class PlayerController {
         // console.log(err)
 
         let errors = {username: '', email: '', password: ''}
-
+        
         if (err.message === 'incorrect username') {
             errors.username = 'That player is not registered!'
         }
@@ -19,11 +19,17 @@ class PlayerController {
         }
 
         if (err.code === 11000) {
-            errors.username = 'That username is already used!'
-        }
 
-        if (err.code === 11000) {
-            errors.email = 'That email is already used!'
+            let keyPattern = Object.keys(err.keyPattern)[0]
+
+            if (keyPattern === 'username') {
+                errors.username = 'That username is already used!'
+            }
+
+            if (keyPattern === 'email') {
+                errors.email = 'That email is already used!'
+            }
+
         }
 
         if (err.message.includes('players validation failed')) {
@@ -100,7 +106,7 @@ class PlayerController {
 
         res.cookie('jwt', '', { maxAge: 1 })
 
-        res.redirect('/')
+        res.redirect('/login')
 
     }
 
@@ -120,6 +126,72 @@ class PlayerController {
         await playerModel.updateOne({_id:playerId}, {
             plays:newStatPlay, wins:newStatWin, draws:newStatDraws, losses:newStatLosses
         })
+
+    }
+
+    async playerSettings(req, res) {
+
+        const { id, username, email, password } = req.body
+
+        const player = await playerModel.findOne({ _id:id })
+
+        const messages = {
+            usernameSuccess: '',
+            emailSuccess: '',
+            passwordSuccess: '',
+            usernameError: '',
+            emailError: '',
+            passwordError: ''
+        }
+
+        if (username && username !== player.username) {
+
+            const checkUsername = await playerModel.findOne({ username: username })
+            
+            if (checkUsername === null) {
+                await playerModel.updateOne({_id:id}, {username:username})
+                messages.usernameSuccess = 'Successfully username changed!'
+            } else {
+                messages.usernameError = 'That username is already used!'
+            }
+
+        }
+
+        if (email && email !== player.email) {
+
+            const checkemail = await playerModel.findOne({ email: email })
+            
+            if (checkemail === null) {
+                await playerModel.updateOne({_id:id}, {email:email})
+                messages.emailSuccess = 'Successfully email changed!'
+            } else {
+                messages.emailError = 'That email is already used!'
+            }
+
+        }
+
+        if (password) {
+            if (password.length >= 5) {
+                await playerModel.updateOne({_id:id}, {password:password})
+                messages.passwordSuccess = 'Successfully password changed!'
+            } else {
+                messages.passwordError = 'The password must have at least 5 characteres.'
+            }
+        }
+
+        res.json({ messages })
+
+    }
+
+    async playerRemove(req, res) {
+
+        const id = req.body.id
+
+        await playerModel.findByIdAndRemove({ _id:id })
+
+        setTimeout(() => {
+            res.redirect('/')
+        }, 5000)
 
     }
     

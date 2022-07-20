@@ -9,17 +9,17 @@ const resultArea = document.querySelector('.game-result')
 
 function play(hand) {
 
-    resultArea.innerHTML = '...'
+    resultArea.innerHTML = 'Processing...'
     selectedTable.innerHTML = ''
     opponentTable.innerHTML = ''
 
-    move = ''
-    move += hand + '-'
-    selectedTable.innerHTML = `<i class="far fa-hand-${hand}"></i>`
-
-    opponent()
-        
-    result()
+    setTimeout( () => {
+        move = ''
+        move += hand + '-'
+        selectedTable.innerHTML = `<i class="far fa-hand-${hand}"></i>`
+        opponent()
+        result()
+    }, 1000)
 
 }
 

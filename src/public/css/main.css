@@ -17,4 +17,8 @@ a {
   text-decoration: none;
 }
 
+li {
+  list-style-type: none;
+}
+
 /*# sourceMappingURL=main.css.map */

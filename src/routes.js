@@ -18,6 +18,8 @@ routes.get('/login', (req, res) => {
     res.render('login')
 })
 
+routes.get('/logout', playerController.playerLogout)
+
 routes.get('/profile', requireAuth, (req, res) => {
     res.render('profile')
 })
@@ -26,14 +28,30 @@ routes.get('/game', requireAuth, (req, res) => {
     res.render('game')
 })
 
-routes.get('/logout', playerController.playerLogout)
+routes.get('/edit-account', requireAuth, (req, res) => {
+    res.render('edit-account')
+})
+
+routes.get('/delete-account', requireAuth, (req, res) => {
+    res.render('delete-account')
+})
+
+routes.get('/player-removed', requireAuth, (req, res) => {
+    res.render('player-removed')
+})
 
 // POST
 
-routes.post('/game', playerController.playerPlays)
+routes.post('*', checkPlayer)
 
 routes.post('/signup', playerController.playerSignup)
 
 routes.post('/login', playerController.playerLogin)
+
+routes.post('/game', playerController.playerPlays)
+
+routes.post('/edit-account', playerController.playerSettings)
+
+routes.post('/player-removed', playerController.playerRemove)
 
 module.exports = routes
