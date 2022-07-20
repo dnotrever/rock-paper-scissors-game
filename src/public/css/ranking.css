@@ -1,0 +1,15 @@
+table {
+  background-color: silver;
+  width: 35rem;
+}
+table tr {
+  background-color: transparent;
+}
+table tr th {
+  background-color: gray;
+}
+table tr td {
+  background-color: transparent;
+}
+
+/*# sourceMappingURL=ranking.css.map */

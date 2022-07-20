@@ -18,7 +18,9 @@ routes.get('/login', (req, res) => {
     res.render('login')
 })
 
-routes.get('/logout', playerController.playerLogout)
+routes.get('/ranking', playerController.playerAll)
+
+routes.get('/logout', requireAuth, playerController.playerLogout)
 
 routes.get('/profile', requireAuth, (req, res) => {
     res.render('profile')
@@ -26,10 +28,6 @@ routes.get('/profile', requireAuth, (req, res) => {
 
 routes.get('/game', requireAuth, (req, res) => {
     res.render('game')
-})
-
-routes.get('/ranking', requireAuth, (req, res) => {
-    res.render('ranking')
 })
 
 routes.get('/edit-account', requireAuth, (req, res) => {

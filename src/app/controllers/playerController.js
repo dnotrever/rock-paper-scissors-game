@@ -194,6 +194,19 @@ class PlayerController {
         }, 5000)
 
     }
+
+    async playerAll(req, res) {
+
+        const result = await playerModel.find({})
+
+        const sortingPlayers = result.sort((a, b) => b.wins - a.wins)
+
+        res.render('ranking', {
+            result: sortingPlayers,
+            noPlayers: "There're no registered players yet."
+        })
+
+    }
     
 }
 
