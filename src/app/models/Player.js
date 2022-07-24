@@ -32,7 +32,7 @@ const playerSchema = new mongoose.Schema({
 
     losses: { type: Number, default: 0 },
 
-    avatar: { data: String },
+    avatar: { type: String, default: 'undefinedavatar' },
 
     createdAt: { type: Date, default: Date.now }
 

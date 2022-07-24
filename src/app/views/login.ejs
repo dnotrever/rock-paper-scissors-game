@@ -1,47 +1,36 @@
-<%- include('./main') -%>
 
 <link href="css/main.css" rel="stylesheet">
 <link href="css/login.css" rel="stylesheet">
 
-<div class="container d-flex flex-column">
+<div class="login-page">
 
     <div class="login-title">
-        <h2>Sign In!</h2>
+        <h2>Log In!</h2>
     </div>
 
-    <form class="login-form" action="/login" method="POST">
+    <form class="login-form d-flex flex-column justify-content-around">
 
         <div class="form-group login-username">
-            <small class="username-error login-warnings"></small>
+            <div class="username-error login-warnings"></div>
             <input type="text" class="form-control" name="username" placeholder="Username">
             <small>
-                Forgot your username?
-                <a href="#">Click here!</a>
+                Forgot your username? <a href="#">Click here!</a>
             </small>
         </div>
 
         <div class="form-group login-password">
-            <small class="password-error login-warnings"></small>
+            <div class="password-error login-warnings"></div>
             <input type="password" class="form-control" name="password" placeholder="Password"> 
             <small>
-                Forgot your password?
-                <a href="#">Click here!</a>
+                Forgot your password? <a href="#">Click here!</a>
             </small>
         </div>
 
-    <div class="login-button">
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </div>
+        <div class="login-button">
+            <button type="submit" class="btn shadow-none">ENTER</button>
+        </div>
     
     </form>
-
-    <div class="login-submenu">
-      <p><a href="/">Come Back to the Home</a></p>
-      <p>
-        Not a player yet?
-        <a href="/signup">Sign Up!</a>
-      </p>  
-    </div>
       
 </div>
 

@@ -1,25 +1,68 @@
-.container {
+.settings-page {
+  background-color: #DDD;
+  height: 90%;
+  width: 35%;
+  border-radius: 7px;
+}
+.settings-page .settings-title {
+  height: 15%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  text-align: center;
 }
-
-.settings-warnings {
-  background-color: transparent;
-  height: 9rem;
-  width: 30rem;
-  margin-top: 0.5rem;
+.settings-page .settings-title h2 {
+  font-size: 30px;
+}
+.settings-page .settings-form {
+  height: 80%;
+}
+.settings-page .settings-form .form-group {
+  height: 6rem;
+  display: flex;
+  flex-direction: column;
+}
+.settings-page .settings-form .form-group .settings-warnings {
+  height: 1.6rem;
   font-size: 0.9rem;
-  text-align: center;
 }
-
-.msg-error {
+.settings-page .settings-form .form-group .msg-error {
   color: red;
 }
-
-.msg-success {
+.settings-page .settings-form .form-group .msg-success {
   color: green;
+}
+.settings-page .settings-form .form-group .form-control {
+  padding: 0.6rem 0.8rem;
+  width: 80%;
+  align-self: center;
+}
+.settings-page .settings-form .settings-username {
+  height: 4.5rem;
+}
+.settings-page .settings-form .settings-email {
+  height: 4.5rem;
+}
+.settings-page .settings-form .nochanges-msg {
+  height: 3.5em;
+  color: blue;
+}
+.settings-page .settings-form .settings-button {
+  width: 100%;
+}
+.settings-page .settings-form .settings-button button {
+  width: 9rem;
+  height: 3rem;
+  font-size: 1.2rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  background-color: indigo;
+  color: #FFF;
+  margin-top: 2rem;
+  border: none;
+  transition: 0.3s;
+}
+.settings-page .settings-form .settings-button button:hover {
+  background-color: darkviolet;
 }
 
 /*# sourceMappingURL=edit-account.css.map */

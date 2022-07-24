@@ -1,81 +1,72 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css");
-.container {
-  display: flex;
-  flex-direction: column;
+.game-page {
+  width: 75%;
 }
-
-.game-stats {
-  display: flex;
-  justify-content: space-evenly;
-  width: 25rem;
-}
-.game-stats .stats {
-  display: flex;
-  flex-direction: column;
-}
-
-.game-hands {
+.game-page .game-hands {
   display: flex;
   justify-content: center;
   width: 100%;
-  height: 10rem;
+  height: 20%;
 }
-.game-hands i {
-  font-size: 4rem;
-  color: #555;
-  cursor: pointer;
-  transition: all 0.5s;
-}
-.game-hands i:hover {
-  transform: rotate(-45deg);
-  font-size: 5rem;
-  color: #111;
-}
-.game-hands .hand {
+.game-page .game-hands .hand {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 10rem;
 }
-
-.game-table {
-  display: flex;
-  justify-content: space-evenly;
-  width: 100%;
-  height: 25rem;
+.game-page .game-hands .hand i {
+  font-size: 4rem;
+  color: #555;
+  cursor: pointer;
+  transition: 0.5s;
 }
-.game-table .selected {
+.game-page .game-hands .hand i:hover {
+  transform: rotate(-45deg);
+  font-size: 5rem;
+  color: #111;
+}
+.game-page .game-hands .hand .fa-hand-scissors {
+  transform: rotate(90deg);
+}
+.game-page .game-hands .hand .fa-hand-scissors:hover {
+  transform: rotate(45deg);
+}
+.game-page .game-table {
+  width: 100%;
+  height: 45%;
+}
+.game-page .game-table .selected {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
 }
-.game-table .selected i {
+.game-page .game-table .selected i {
   font-size: 10rem;
   transform: rotate(30deg);
-  color: darkblue;
+  color: midnightblue;
 }
-.game-table .opponent {
+.game-page .game-table .selected .fa-hand-scissors {
+  transform: rotate(120deg);
+}
+.game-page .game-table .opponent {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
 }
-.game-table .opponent i {
+.game-page .game-table .opponent i {
   font-size: 10rem;
   transform: rotate(-30deg);
-  color: darkgreen;
+  color: firebrick;
 }
-
-.game-result {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.game-page .game-table .opponent .fa-hand-scissors {
+  transform: rotate(60deg);
+}
+.game-page .game-result {
   width: 100%;
-  height: 10rem;
-  font-family: Helvetica, sans-serif;
-  font-size: 4rem;
-  /* text-shadow: 3px 3px 5px #555 */
+  height: 35%;
+  font-size: 32px;
 }
 
 /*# sourceMappingURL=game.css.map */

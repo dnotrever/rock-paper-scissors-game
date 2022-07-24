@@ -1,0 +1,72 @@
+$default: .3s
+
+.header-title
+    width: 60%
+    
+    a
+        margin: 0 2rem
+        color: #222
+        font-size: 30px
+        transition: $default
+    
+    a:hover
+        color: royalblue
+
+.header-menu
+    width: 40%
+
+    .option
+        height: 4rem
+        width: 8rem
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+
+        .nav-link
+            color: #333
+            text-transform: uppercase
+
+    .profile-opt
+        width: 15rem
+
+        .profile-btn
+            padding: 0
+            font-size: 18px
+            text-transform: lowercase
+            align-self: end
+            transition: $default
+
+        .profile-btn:hover
+            color: rebeccapurple
+
+    .second-opt
+        width: 8rem
+
+        .second-btn
+            padding: 0
+            font-weight: bold
+            transition: $default
+        
+        .second-btn:hover
+            color: rebeccapurple
+
+    .button
+        padding: .5rem 1rem
+        border-radius: 8px
+        border: none
+        transition: $default
+
+    .signup-btn
+        background-color: cornflowerblue
+
+    .signup-btn:hover
+        color: #111
+        background-color: lightskyblue
+
+    .logout-btn
+        background-color: #999
+
+    .logout-btn:hover
+        color: #111
+        background-color: #BBB

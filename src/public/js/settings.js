@@ -9,6 +9,8 @@ const usernameError = document.querySelector('.username-error')
 const emailError = document.querySelector('.email-error')
 const passwordError = document.querySelector('.password-error')
 
+const noChanges = document.querySelector('.nochanges-msg')
+
 form.addEventListener('submit', async event => {
 
     event.preventDefault()
@@ -20,6 +22,8 @@ form.addEventListener('submit', async event => {
     usernameError.textContent = ''
     emailError.textContent = ''
     passwordError.textContent = ''
+
+    noChanges.textContent = ''
 
     const id = playerId.innerText
     const username = form.username.value
@@ -43,6 +47,8 @@ form.addEventListener('submit', async event => {
         usernameError.textContent = data.messages.usernameError
         emailError.textContent = data.messages.emailError
         passwordError.textContent = data.messages.passwordError
+
+        noChanges.textContent = data.messages.noChanges
 
     } 
 

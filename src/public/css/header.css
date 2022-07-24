@@ -1,0 +1,74 @@
+.header-title {
+  width: 60%;
+}
+.header-title a {
+  margin: 0 2rem;
+  color: #222;
+  font-size: 30px;
+  transition: 0.3s;
+}
+.header-title a:hover {
+  color: royalblue;
+}
+
+.header-menu {
+  width: 40%;
+}
+.header-menu .option {
+  height: 4rem;
+  width: 8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.header-menu .option .nav-link {
+  color: #333;
+  text-transform: uppercase;
+}
+.header-menu .profile-opt {
+  width: 15rem;
+}
+.header-menu .profile-opt .profile-btn {
+  padding: 0;
+  font-size: 18px;
+  text-transform: lowercase;
+  align-self: end;
+  transition: 0.3s;
+}
+.header-menu .profile-opt .profile-btn:hover {
+  color: rebeccapurple;
+}
+.header-menu .second-opt {
+  width: 8rem;
+}
+.header-menu .second-opt .second-btn {
+  padding: 0;
+  font-weight: bold;
+  transition: 0.3s;
+}
+.header-menu .second-opt .second-btn:hover {
+  color: rebeccapurple;
+}
+.header-menu .button {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: none;
+  transition: 0.3s;
+}
+.header-menu .signup-btn {
+  background-color: cornflowerblue;
+}
+.header-menu .signup-btn:hover {
+  color: #111;
+  background-color: lightskyblue;
+}
+.header-menu .logout-btn {
+  background-color: #999;
+}
+.header-menu .logout-btn:hover {
+  color: #111;
+  background-color: #BBB;
+}
+
+/*# sourceMappingURL=header.css.map */

@@ -1,0 +1,52 @@
+
+<link href="css/change-avatar.css" rel="stylesheet">
+
+<div class="change-avatar-page">
+
+    <div class="player-id" style="visibility: hidden;"><%= player._id %></div>
+
+    <form>
+
+        <div class="row">
+
+            <div class="player-avatar col toggle-box">
+                <img onclick="selectAvatar('avatarwoman1')" src="images/avatars/avatarwoman1.png" alt="woman 1 avatar">
+            </div>
+    
+            <div class="player-avatar col">
+                <img onclick="selectAvatar('avatarwoman2')" src="images/avatars/avatarwoman2.png" alt="woman 1 avatar">
+            </div>
+    
+            <div class="player-avatar col">
+                <img onclick="selectAvatar('avatarwoman3')" src="images/avatars/avatarwoman3.png" alt="woman 1 avatar">
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="player-avatar col">
+                <img onclick="selectAvatar('avatarman1')" src="images/avatars/avatarman1.png" alt="woman 1 avatar">
+            </div>
+        
+            <div class="player-avatar col">
+                <img onclick="selectAvatar('avatarman2')" src="images/avatars/avatarman2.png" alt="woman 1 avatar">
+            </div>
+
+            <div class="player-avatar col">
+                <img onclick="selectAvatar('avatarman3')" src="images/avatars/avatarman3.png" alt="woman 1 avatar">
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="change-player-btn col">
+                <button class="btn btn-primary">Change</button>
+            </div>
+        </div>
+
+    </form>
+
+</div>
+
+<script src="js/change-avatar.js"></script>

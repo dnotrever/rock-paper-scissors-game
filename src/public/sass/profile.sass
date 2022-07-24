@@ -1,58 +1,48 @@
-$bgc-olive: #DDD
-$bgc-silver: transparent
-$bgc-gray: transparent
-$bgc-orange: transparent
 
-.container
-    background-color: #FFF
-
-    align-items: flex-start
-
-.profile-main
-    background-color: $bgc-silver
-
-    height: 25rem
+.profile-page
     width: 50%
-    display: flex
-    flex-direction: column
-    align-items: center
+    padding: 1rem
+    text-align: left
 
-    .profile-title
-        background-color: $bgc-orange
+    .profile-main
+        width: 60%
+        padding: .3rem
 
-        width: 100%
-    
-    .profile-date
-        background-color: $bgc-orange
+        .profile-title
+            padding: .5rem 0
 
-        width: 100%
+        h2
+            font-size: 40px
 
-    .profile-stats
-        background-color: $bgc-orange
+        .profile-email
+            color: #444
 
-        width: 100%
-        margin-top: 2rem
+        .profile-stats
+            margin-top: 2rem
+            width: 75%
+        
+            li
+                font-size: 20px
+                background-color: transparent
 
-    .play-game
-        margin-top: 2rem
+    .profile-aside
+        width: 40%
+        height: 65%
+        padding: 1rem
+        text-align: center
 
-        width: 100%
+        img
+            width: 165px
 
-.profile-aside
-    background-color: $bgc-gray
+        .profile-id
+            font-size: 12px
+            color: #666
+            margin-bottom: 1rem
 
-    height: 25rem
-    width: 50%
-    display: flex
-    flex-direction: column
-    align-items: center
+        a
+            font-size: 18px
+            color: #222
+            transition: .4s
 
-    .profile-avatar
-        background-color: $bgc-orange
-
-        width: 12rem
-        height: 12rem
-        margin-bottom: .3rem
-    
-    small 
-        margin-bottom: 1.4rem
+        a:hover
+            color: royalblue

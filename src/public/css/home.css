@@ -1,0 +1,31 @@
+.presentation {
+  padding-top: 2rem;
+  height: 80%;
+}
+.presentation h2 {
+  align-content: center;
+  font-size: 45px;
+  margin-bottom: 1rem;
+}
+.presentation h3 {
+  margin-bottom: 5rem;
+  font-size: 25px;
+}
+.presentation p {
+  margin-bottom: 10rem;
+  font-size: 20px;
+}
+.presentation a {
+  background-color: forestgreen;
+  font-size: 20px;
+  color: #FFF;
+  border-radius: 8px;
+  padding: 0.8rem;
+  transition: 0.3s;
+}
+.presentation a:hover {
+  color: #EEE;
+  background-color: seagreen;
+}
+
+/*# sourceMappingURL=home.css.map */

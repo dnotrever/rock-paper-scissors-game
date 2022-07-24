@@ -1,75 +1,70 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css')
 
-.container
-    display: flex
-    flex-direction: column
+.game-page
+    width: 75%
 
-.game-stats
-    display: flex
-    justify-content: space-evenly
-    width: 25rem
-
-    .stats
-        display: flex
-        flex-direction: column
-
-.game-hands
-    display: flex
-    justify-content: center
-    width: 100%
-    height: 10rem
-
-    i
-        font-size: 4rem
-        color: #555
-        cursor: pointer
-        transition: all .5s
-
-    i:hover
-        transform: rotate(-45deg)
-        font-size: 5rem
-        color: #111
-
-    .hand
+    .game-hands
         display: flex
         justify-content: center
-        align-items: center
-        width: 10rem
-
-.game-table
-    display: flex
-    justify-content: space-evenly
-    width: 100%
-    height: 25rem
-
-    .selected
-        display: flex
-        justify-content: center
-        align-items: center
         width: 100%
+        height: 20%
 
-        i
-            font-size: 10rem
-            transform: rotate(30deg)
-            color: darkblue
+        .hand
+            display: flex
+            justify-content: center
+            align-items: center
+            width: 10rem
 
-    .opponent
-        display: flex
-        justify-content: center
-        align-items: center
+            i
+                font-size: 4rem
+                color: #555
+                cursor: pointer
+                transition: .5s
+
+            i:hover
+                transform: rotate(-45deg)
+                font-size: 5rem
+                color: #111
+
+            .fa-hand-scissors
+                transform: rotate(90deg)
+
+            .fa-hand-scissors:hover
+                transform: rotate(45deg)
+
+    .game-table
         width: 100%
+        height: 45%
 
-        i
-            font-size: 10rem
-            transform: rotate(-30deg)
-            color: darkgreen
+        .selected
+            display: flex
+            justify-content: center
+            align-items: center
+            width: 100%
 
-.game-result
-    display: flex
-    justify-content: center
-    align-items: center
-    width: 100%
-    height: 10rem
-    font-family: Helvetica, sans-serif
-    font-size: 4rem
-    /* text-shadow: 3px 3px 5px #555 */
+            i
+                font-size: 10rem
+                transform: rotate(30deg)
+                color: midnightblue
+
+            .fa-hand-scissors
+                transform: rotate(120deg)
+
+        .opponent
+            display: flex
+            justify-content: center
+            align-items: center
+            width: 100%
+
+            i
+                font-size: 10rem
+                transform: rotate(-30deg)
+                color: firebrick
+
+            .fa-hand-scissors
+                transform: rotate(60deg)
+
+    .game-result
+        width: 100%
+        height: 35%
+        font-size: 32px

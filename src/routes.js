@@ -34,12 +34,16 @@ routes.get('/edit-account', requireAuth, (req, res) => {
     res.render('edit-account')
 })
 
+routes.get('/change-avatar', requireAuth, (req, res) => {
+    res.render('change-avatar')
+})
+
 routes.get('/delete-account', requireAuth, (req, res) => {
     res.render('delete-account')
 })
 
 routes.get('/player-removed', requireAuth, (req, res) => {
-    res.render('player-removed')
+    res.render('player-removed', {layout: 'player-removed'})
 })
 
 // POST
@@ -53,6 +57,8 @@ routes.post('/login', playerController.playerLogin)
 routes.post('/game', playerController.playerPlays)
 
 routes.post('/edit-account', playerController.playerSettings)
+
+routes.post('/avatar-changed', playerController.playerAvatar)
 
 routes.post('/player-removed', playerController.playerRemove)
 

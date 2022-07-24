@@ -1,73 +1,61 @@
-.login-title {
-  background-color: transparent;
-  height: 3rem;
-  width: 30rem;
-  margin-top: 0.5rem;
+.login-page {
+  background-color: #DDD;
+  height: 90%;
+  width: 35%;
+  border-radius: 7px;
+}
+.login-page .login-title {
+  height: 15%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
 }
-.login-title h2 {
-  background-color: transparent;
-  height: 100%;
-  width: 60%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 2rem;
+.login-page .login-title h2 {
+  font-size: 30px;
 }
-
-.login-form {
-  background-color: transparent;
-  height: 22rem;
-  width: 30rem;
-  margin: 1rem 0;
-  padding: 0 3.5rem;
+.login-page .login-form {
+  height: 80%;
+}
+.login-page .login-form .form-group {
+  height: 7rem;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
 }
-.login-form .form-group {
-  height: 6rem;
-}
-.login-form .form-group .login-warnings {
-  background-color: transparent;
+.login-page .login-form .form-group .login-warnings {
+  height: 1.6rem;
   color: red;
-  height: 1.4rem;
+  font-size: 0.9rem;
 }
-.login-form .form-group .form-control {
-  background-color: #EEE;
-  padding: 0.5rem;
-  margin-bottom: 0.3rem;
-  left: 2rem;
-  color: #444;
+.login-page .login-form .form-group .form-control {
+  padding: 0.6rem 0.8rem;
+  width: 80%;
+  align-self: center;
 }
-.login-form .login-button {
-  background-color: transparent;
+.login-page .login-form .form-group a {
+  color: navy;
+  transition: 0.4s;
+}
+.login-page .login-form .form-group a:hover {
+  color: blue;
+}
+.login-page .login-form .login-button {
   width: 100%;
-  display: flex;
-  margin: 0.7rem 0;
-  justify-content: space-around;
-  align-items: center;
+  margin-top: 4rem;
 }
-.login-form .login-button button {
+.login-page .login-form .login-button button {
   width: 8rem;
+  height: 3rem;
   font-size: 1.2rem;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  background-color: indigo;
+  color: #FFF;
+  border: none;
+  transition: 0.3s;
 }
-
-.login-submenu {
-  background-color: transparent;
-  height: 6rem;
-  width: 30rem;
-  margin-top: 0.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.2rem;
-}
-.login-submenu p {
-  background-color: transparent;
+.login-page .login-form .login-button button:hover {
+  background-color: darkviolet;
 }
 
 /*# sourceMappingURL=login.css.map */

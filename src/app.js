@@ -1,5 +1,6 @@
 const cookieParser = require('cookie-parser')
 const express = require('express')
+const expressLayouts = require('express-ejs-layouts')
 const routes = require('./routes')
 
 class App {
@@ -14,6 +15,7 @@ class App {
         this.app.use(express.json())
         this.app.use(express.urlencoded({extended: true}))
         this.app.use(express.static(__dirname + '/public'))
+        this.app.use(expressLayouts)
         this.app.use(cookieParser())
     }
 

@@ -2,6 +2,7 @@
 const winningMoves = ['rock-scissors','paper-rock','scissors-paper']
 const drawMoves = ['rock-rock','paper-paper','scissors-scissors']
 
+const body = document.querySelector('body')
 const playerId = document.querySelector('.player-id')
 const selectedTable = document.querySelector('.selected')
 const opponentTable = document.querySelector('.opponent')
@@ -9,7 +10,9 @@ const resultArea = document.querySelector('.game-result')
 
 function play(hand) {
 
-    resultArea.innerHTML = 'Processing...'
+    body.style.cssText = 'pointer-events: none'
+
+    resultArea.innerHTML = '...'
     selectedTable.innerHTML = ''
     opponentTable.innerHTML = ''
 
@@ -19,6 +22,7 @@ function play(hand) {
         selectedTable.innerHTML = `<i class="far fa-hand-${hand}"></i>`
         opponent()
         result()
+        body.style.cssText = 'pointer-events: auto'
     }, 1000)
 
 }
@@ -30,16 +34,13 @@ function opponent() {
     switch(random) {
         case 1:
             move += 'rock'
-            opponentTable.innerHTML = '<i class="far fa-hand-rock"></i>'
-            break
+            return opponentTable.innerHTML = '<i class="far fa-hand-rock"></i>'
         case 2:
             move += 'paper'
-            opponentTable.innerHTML = '<i class="far fa-hand-paper"></i>'
-            break
+            return opponentTable.innerHTML = '<i class="far fa-hand-paper"></i>'
         case 3:
             move += 'scissors'
-            opponentTable.innerHTML = '<i class="far fa-hand-scissors"></i>'
-            break
+            return opponentTable.innerHTML = '<i class="far fa-hand-scissors"></i>'
     }
     
 }

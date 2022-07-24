@@ -1,0 +1,40 @@
+.change-avatar-page {
+  width: 50%;
+}
+.change-avatar-page .player-avatar {
+  width: 8rem;
+  height: 12rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.change-avatar-page .player-avatar img {
+  margin: 1rem;
+  width: 130px;
+  transition: 0.3s;
+}
+.change-avatar-page .player-avatar img:hover {
+  cursor: pointer;
+  width: 160px;
+}
+.change-avatar-page .player-avatar img:active {
+  background-color: yellow;
+  width: 160px;
+}
+.change-avatar-page button {
+  width: 9rem;
+  height: 3rem;
+  font-size: 1.2rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  background-color: midnightblue;
+  margin-top: 3rem;
+  border: none;
+  transition: 0.3s;
+}
+.change-avatar-page button:hover {
+  background-color: mediumblue;
+}
+
+/*# sourceMappingURL=change-avatar.css.map */

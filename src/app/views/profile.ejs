@@ -1,43 +1,46 @@
-<%- include('./main') -%>
 
-<link href="css/main.css" rel="stylesheet">
 <link href="css/profile.css" rel="stylesheet">
 
-<div class="container d-flex">
+<div class="profile-page d-flex">
 
-    <div class="profile-main">
+    <div class="profile-main d-flex flex-column">
 
-        <h3 class="profile-title">
-            <%- player.username -%>
-        </h3>
+        <h2 class="profile-title">
+            <%= player.username %>
+        </h2>
 
-        <small>ID: <%- player._id -%></small>
+        <small class="profile-email">
+            <%= player.email %>
+        </small>
         
-        <div class="profile-stats">
-            <ul>
-                <li>Plays: <%- player.plays -%></li>
-                <li>Wins: <%- player.wins -%></li>
-                <li>Draws: <%- player.draws -%></li>
-                <li>Losses: <%- player.losses -%></li>
-            </ul>
-        </div>
+        <ul class="profile-stats list-group list-group-flush">
+            <li class="list-group-item">Plays: <%- player.plays -%></li>
+            <li class="list-group-item">Wins: <%- player.wins -%></li>
+            <li class="list-group-item">Draws: <%- player.draws -%></li>
+            <li class="list-group-item">Losses: <%- player.losses -%></li>
+        </ul>
 
-        <div class="play-game">
-            <a href="/game">Play Now!</a>
-        </div>
-
-        <a href="/">Go Home!</a>
-        <a href="/ranking">Check the Ranking!</a>
 
     </div>
 
-    <div class="profile-aside">
+    <div class="profile-aside d-flex flex-column justify-content-between">
+
         <div class="profile-avatar">
-            <img src="images/avatar.png" alt="player avatar">
+            <img class="avatar-img" src="images/avatars/<%= player.avatar %>.png" alt="player avatar">
+            <small>
+                <a href="/change-avatar">Change Avatar</a>
+            </small>
         </div>
+        <small class="profile-id">
+            <%= player._id %>
+        </small>
+
         <a href="/edit-account">Account Settings</a>
-        <a href="/delete-account">Delete Account</a>  
-        <a href="/logout">Log Out</a>
+
+        <a href="/delete-account">Delete Account</a> 
+
     </div>
     
 </div>
+
+<script src="js/profile.js"></script>

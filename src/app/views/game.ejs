@@ -1,16 +1,8 @@
-<%- include('./main') -%>
-
-<link href="css/main.css" rel="stylesheet">
 <link href="css/game.css" rel="stylesheet">
 
-<div class="container d-flex">
+<div class="game-page d-flex flex-column">
 
-    <div class="game-stats">
-        <small><a href="/profile">Profile</a></small>
-        <small><a href="/ranking">Ranking</a></small>
-    </div>
-    
-    <small class="player-id"><%- player._id -%></small>
+    <small class="player-id" style="display: none"><%- player._id -%></small>
 
     <div class="game-hands">
 
@@ -28,12 +20,12 @@
         
     </div>
 
-    <div class="game-table">
+    <div class="game-table d-flex justify-content-evenly">
         <div class="selected"></div>
         <div class="opponent"></div>
     </div>
 
-    <div class="game-result"></div>
+    <div class="game-result d-flex flex-column text-center"></div>
 
 </div>
 

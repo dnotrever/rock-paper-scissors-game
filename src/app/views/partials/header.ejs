@@ -1,0 +1,40 @@
+
+<link rel="stylesheet" href="css/header.css">
+
+<h1 class="header-title nav d-flex align-items-center">
+    <a href="/">RPSGame</a>
+</h1>
+
+<ul class="header-menu nav d-flex justify-content-around align-items-center">
+
+    <% if (player) { %>
+
+        <li class="nav-item option profile-opt">
+            <a class="nav-link profile-btn" href="/profile">
+                <%= player.username %>
+            </a>
+        </li>
+
+        <li class="nav-item option second-opt">
+            <a class="nav-link second-btn" href="/game">Play Now!</a>
+        </li>
+
+        <li class="nav-item option">
+            <a class="nav-link button logout-btn" href="/logout">Log out</a>
+        </li>
+
+    <% } else { %>
+
+        <li class="nav-item option profile-opt"></li>
+
+        <li class="nav-item option second-opt">
+            <a class="nav-link second-btn" href="/login">Log in</a>
+        </li>
+
+        <li class="nav-item option">
+            <a class="nav-link button signup-btn" href="/signup">Sign up</a>
+        </li>
+
+    <% } %>
+
+</ul>

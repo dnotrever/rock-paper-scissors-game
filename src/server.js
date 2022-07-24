@@ -8,6 +8,7 @@ app.disable('x-powered-by')
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, './app/views'))
+app.set("layout player-removed", false)
 
 app.listen(PORT, () => {
     database

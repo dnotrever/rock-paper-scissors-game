@@ -1,15 +1,24 @@
-table {
-  background-color: silver;
-  width: 35rem;
+.ranking-page {
+  width: 50%;
 }
-table tr {
-  background-color: transparent;
+.ranking-page .ranking-title {
+  height: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-table tr th {
-  background-color: gray;
+.ranking-page .ranking-title h2 {
+  font-size: 30px;
 }
-table tr td {
-  background-color: transparent;
+.ranking-page .ranking-table {
+  background-color: pink;
+  margin-top: 1rem;
+}
+.ranking-page .ranking-table thead {
+  background-color: lightsteelblue;
+}
+.ranking-page .ranking-table tbody {
+  background-color: #DDD;
 }
 
 /*# sourceMappingURL=ranking.css.map */

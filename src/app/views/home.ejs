@@ -1,24 +1,14 @@
-<%- include('./main') -%>
 
-<link href="css/main.css" rel="stylesheet">
+<link href="css/home.css" rel="stylesheet">
 
-<div class="container d-flex flex-column">
+<div class="presentation">
 
-    <h1>
-        <span>Rock-Paper-Scissors</span>
-        the Game
-    </h1>
-
-    <h4>Welcome and Have Fun!</h4>
-
-    <% if (player) { %>
-        <p><a href="/profile"><%- player.username -%></a></p>
-        <p><a href="/logout">Logout</a></p>
-    <% } else { %>
-        <p>Already a player? <a href="/login">Sign In!</a> </p>
-        <p>Not registered yet? <a href="/signup">Sign Up!</a> </p>
-    <% } %>
-
-    <a href="/ranking">Check the Ranking!</a>
+    <h2 class="home-title">Rock-Paper-Scissors</h2>
+    
+    <h3 class="home-subtitle">the game</h3>
+    
+    <p class="home-text">Welcome and Have Fun!</p>
+    
+    <a class="home-ranking-link" href="/ranking">Check the Ranking</a>
 
 </div>

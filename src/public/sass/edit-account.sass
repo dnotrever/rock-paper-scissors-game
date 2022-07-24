@@ -1,28 +1,67 @@
-$bgc-olive: #DDD
-$bgc-silver: transparent
-$bgc-gray: transparent
-$bgc-orange: transparent
 
-$width-main-divs: 30rem
-$margin-top-main-divs: .5rem
+.settings-page
+    background-color: #DDD
+    height: 90%
+    width: 35%
+    border-radius: 7px
 
-.container
-    display: flex
-    flex-direction: column
-    justify-content: center
-    text-align: center
+    .settings-title
+        height: 15%
+        display: flex
+        flex-direction: column
+        justify-content: center
 
-.settings-warnings
-    background-color: $bgc-silver
+        h2
+            // background-color: yellow
+            font-size: 30px
 
-    height: 9rem
-    width: $width-main-divs
-    margin-top: $margin-top-main-divs
-    font-size: .9rem
-    text-align: center
+    .settings-form
+        height: 80%
 
-.msg-error
-    color: red
+        .form-group
+            height: 6rem
+            display: flex
+            flex-direction: column
+            
+            .settings-warnings
+                height: 1.6rem
+                font-size: .9rem
 
-.msg-success
-    color: green
+            .msg-error
+                color: red
+            
+            .msg-success
+                color: green
+            
+            .form-control
+                padding: .6rem .8rem
+                width: 80%
+                align-self: center
+            
+        .settings-username
+            height: 4.5rem
+                
+        .settings-email
+            height: 4.5rem
+        
+        .nochanges-msg
+            height: 3.5em
+            color: blue
+
+        .settings-button
+            width: 100%
+            
+            button
+                width: 9rem
+                height: 3rem
+                font-size: 1.2rem
+                letter-spacing: 3px
+                text-transform: uppercase
+                background-color: indigo
+                color: #FFF
+                margin-top: 2rem
+                border: none
+                transition: .3s
+
+            button:hover
+                background-color: darkviolet

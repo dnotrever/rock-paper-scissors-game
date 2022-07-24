@@ -1,6 +1,6 @@
 const playerId = document.querySelector('.playerId')
 
-async function removePlayer() {
+async function removedPlayer() {
 
     const id = playerId.innerText
 
@@ -16,8 +16,6 @@ async function removePlayer() {
 
     }
 
-    catch (err) {
-        console.log(err)
-    }
+    catch (err) { console.log(err) }
     
 }
